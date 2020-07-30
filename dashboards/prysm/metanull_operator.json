@@ -1,4 +1,14 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -27,7 +37,7 @@
         "#B877D9",
         "#B877D9"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -124,7 +134,7 @@
         "#37872D",
         "#37872D"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -219,7 +229,7 @@
         "#8F3BB8",
         "#8F3BB8"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -314,7 +324,7 @@
         "#1F60C4",
         "#1F60C4"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -402,7 +412,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "The percentage of ETH balances expected to attest that are actually attesting.",
       "fieldConfig": {
         "defaults": {
@@ -470,7 +480,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "A metric expressing the distance between the current finalized epoch and the expected finalized epoch based on the genesis time. 100% means the expected and current finalized epochs are the same. The metric reaches 0% when the finalized epoch is 25 epochs behind the expected epoch.",
       "fieldConfig": {
         "defaults": {
@@ -548,7 +558,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "description": "The length of time the beacon chain process has been running",
       "fieldConfig": {
@@ -635,7 +645,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Average number of log messages received per hour over the selected time range",
       "fieldConfig": {
         "defaults": {
@@ -710,7 +720,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Counts of active, slashed and exited validators.",
       "fieldConfig": {
         "defaults": {
@@ -781,7 +791,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Current number of pending and exiting validators",
       "fieldConfig": {
         "defaults": {
@@ -841,7 +851,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Estimated length of time until all pending and exiting validators have cleared the queues.",
       "fieldConfig": {
         "defaults": {
@@ -903,7 +913,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Current, justified, and finalized epochs. In this order, these three values should be sequentially decreasing.",
       "fieldConfig": {
         "defaults": {
@@ -978,7 +988,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "The percentage of ETH balances expected to attest that are actually attesting.",
       "fieldConfig": {
         "defaults": {
@@ -1083,7 +1093,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "The number of peers to which the beacon chain is connected",
       "fieldConfig": {
         "defaults": {
@@ -1192,7 +1202,7 @@
         "#73BF69",
         "#73BF69"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 4,
       "description": "Average validator balance across the network",
       "fieldConfig": {
@@ -1283,7 +1293,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Number of pending and existing validators over time. Pending validators are shown as positive values, while exiting validators are shown as negative values.",
       "fieldConfig": {
         "defaults": {
@@ -1411,7 +1421,7 @@
       }
     },
     {
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Current slot and head slot",
       "fieldConfig": {
         "defaults": {
@@ -1481,7 +1491,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "The percentage of all validator balances earning returns. Equal to effective balance of all validators divided by the total balance of all validators.",
       "fieldConfig": {
         "defaults": {
@@ -1575,7 +1585,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "The difference between the expected slot based on the genesis time and the current head slot. Ideally this is zero.",
       "fieldConfig": {
         "defaults": {
@@ -1668,7 +1678,7 @@
         "#5794F2",
         "#5794F2"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1763,7 +1773,7 @@
         "#FA6400",
         "#FA6400"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1856,7 +1866,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "description": "Memory usage on the server",
       "fieldConfig": {
@@ -1981,7 +1991,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Network transmission (tx) and reception (rx) rates",
       "fieldConfig": {
         "defaults": {
@@ -2092,7 +2102,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "description": "The length of time the validator process has been running",
       "fieldConfig": {
@@ -2179,7 +2189,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Average number of log messages received per hour over the selected time range",
       "fieldConfig": {
         "defaults": {
@@ -2263,7 +2273,7 @@
         "#F2CC0C",
         "#73BF69"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 4,
       "description": "Total ETH return on the initial effective stake of active local validators.",
       "fieldConfig": {
@@ -2358,7 +2368,7 @@
         "#FADE2A",
         "#73BF69"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 4,
       "description": "Total percentage return on the initial effective stake of active local validators. Excess deposits will be reflected as earnings.",
       "fieldConfig": {
@@ -2445,7 +2455,7 @@
     },
     {
       "columns": [],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "validator stats by public key over the lifetime of the validator process ",
       "fieldConfig": {
         "defaults": {
@@ -2746,7 +2756,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -2859,7 +2869,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "description": "Processor usage on the server",
       "fieldConfig": {
@@ -3020,7 +3030,7 @@
         "#C4162A",
         "#C4162A"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
       "fieldConfig": {
         "defaults": {
@@ -3118,7 +3128,7 @@
         "#FADE2A",
         "#299c46"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 4,
       "description": "Increase in all local validator balances over the last month",
       "fieldConfig": {
@@ -3213,7 +3223,7 @@
         "#FADE2A",
         "#73BF69"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 4,
       "description": "Increase in all local validator balances over the last week",
       "fieldConfig": {
@@ -3308,7 +3318,7 @@
         "#FADE2A",
         "#73BF69"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 4,
       "description": "Increase in all local validator balances over the last day",
       "fieldConfig": {
@@ -3403,7 +3413,7 @@
         "#FADE2A",
         "#73BF69"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 4,
       "description": "Increase in all local validator balances over the last hour",
       "fieldConfig": {
@@ -3492,7 +3502,7 @@
     {
       "dashboardFilter": "",
       "dashboardTags": [],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -3534,7 +3544,7 @@
         "#FADE2A",
         "#73BF69"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 4,
       "description": "Percentage increase in all local validator balances over the last month",
       "fieldConfig": {
@@ -3629,7 +3639,7 @@
         "#FADE2A",
         "#73BF69"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 4,
       "description": "Percentage increase in all local validator balances over the last week",
       "fieldConfig": {
@@ -3724,7 +3734,7 @@
         "#FADE2A",
         "#73BF69"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 4,
       "description": "Percentage increase in all local validator balances over the last day",
       "fieldConfig": {
@@ -3819,7 +3829,7 @@
         "#FADE2A",
         "#73BF69"
       ],
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 4,
       "description": "Percentage increase in all local validator balances over the last hour",
       "fieldConfig": {

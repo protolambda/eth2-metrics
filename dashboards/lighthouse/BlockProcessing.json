@@ -1,4 +1,14 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -20,7 +30,7 @@
   "panels": [
     {
       "content": "\n# Block Processing Metrics\n\nMetrics collected from a Lighthouse Beacon Node about a `BeaconChain` processing `BeaconBlocks`.\n\nCollected from the `beacon_chain` crate.\n\n\n\n",
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 8,
         "w": 9,
@@ -39,7 +49,7 @@
     },
     {
       "content": "\n### Committees/Shuffling\n\n\nCheck that the committees cache is build, building if not.\n",
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 2,
         "w": 8,
@@ -61,7 +71,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -147,7 +157,7 @@
     },
     {
       "content": "\n### Read from database\n\n\nCheck that the hash isn't already known in the database, load the block and state for processing.\n",
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 2,
         "w": 9,
@@ -169,7 +179,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -257,7 +267,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -345,7 +355,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fill": 1,
       "fillGradient": 0,
@@ -431,7 +441,7 @@
     },
     {
       "content": "\n### Run per_block_processing\n\n\nThe core `state_processing::per_block_processing` verification/state updating function, as defined in the spec.\n",
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 2,
         "w": 14,
@@ -450,7 +460,7 @@
     },
     {
       "content": "\n### Tree hash the beacon state\n\n\nGet the merkle root of the state after `state_processing::per_block_processing`\n",
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 2,
         "w": 8,
@@ -472,7 +482,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fill": 1,
       "fillGradient": 0,
@@ -561,7 +571,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fill": 1,
       "fillGradient": 0,
@@ -647,7 +657,7 @@
     },
     {
       "content": "\n### Update the fork choice algorithm\n\n\nSubmit the block (and all containied attestation) to the LMD GHOST fork choice algorithm. Does not find the head, just updates the votes.\n",
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 3,
         "w": 12,
@@ -666,7 +676,7 @@
     },
     {
       "content": "\n### Checkpoint Cache\n\n\nNot specific to block production, but shows how many times we hit/miss the cache of recently used blocks/states.\n",
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 3,
         "w": 12,
@@ -688,7 +698,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fill": 1,
       "fillGradient": 0,
@@ -777,7 +787,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fill": 1,
       "fillGradient": 0,
@@ -866,7 +876,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "fill": 1,
       "fillGradient": 0,
@@ -952,7 +962,7 @@
     },
     {
       "content": "\n### Per slot processing\n\n\nUsing the `per_slot_processing` function to bring the state of the parent block into the slot of the block being produced.\n",
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 3,
         "w": 12,
@@ -974,7 +984,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Time it takes to bring the parent block state up to the slot of the block being produced",
       "fill": 1,
       "fillGradient": 0,
@@ -1060,7 +1070,7 @@
     },
     {
       "content": "\n### Outlier Analysis\n\nMetrics that show outliers in block processing more effectively than the averaging graphs\n",
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 3,
         "w": 24,
@@ -1090,7 +1100,7 @@
         "mode": "spectrum"
       },
       "dataFormat": "timeseries",
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Frequency of different block processing times, shows outliers more effectively than the averaging view",
       "gridPos": {
         "h": 8,
@@ -1157,7 +1167,7 @@
         "mode": "spectrum"
       },
       "dataFormat": "timeseries",
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "description": "",
       "gridPos": {
         "h": 8,
