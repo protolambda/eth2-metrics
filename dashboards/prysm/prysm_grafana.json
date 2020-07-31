@@ -737,11 +737,7 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "alias": "{component=\"beacon-chain\",instance=\"10.52.23.45:9090\",job=\"kubernetes-pods-istio-secure\",namespace=\"beacon-chain\",pod_name=\"beacon-chain-67df5686b8-v49qh\",pod_template_hash=\"2389124264\",universe=\"beacon-chain\"}",
-          "yaxis": 1
-        },
-        {
-          "alias": "go_memstats_alloc_bytes{component=\"beacon-chain\",instance=\"10.52.23.45:9090\",job=\"kubernetes-pods-istio-secure\",namespace=\"beacon-chain\",pod_name=\"beacon-chain-67df5686b8-v49qh\",pod_template_hash=\"2389124264\",universe=\"beacon-chain\"}",
+          "alias": "go_memstats_alloc_bytes",
           "yaxis": 2
         },
         {
@@ -754,14 +750,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "go_memstats_alloc_bytes{component=\"beacon-chain\"}",
+          "expr": "go_memstats_alloc_bytes{job=\"beacon\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Memory allocation",
           "refId": "B"
         },
         {
-          "expr": "irate(process_cpu_seconds_total{component=\"beacon-chain\"}[5m])",
+          "expr": "irate(process_cpu_seconds_total{job=\"beacon\"}[5m])",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -950,7 +946,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(grpc_server_handled_total{component=\"beacon-chain\",grpc_code=\"OK\"}[5m])) by (grpc_method) / sum(rate(grpc_server_handled_total{component=\"beacon-chain\"}[5m])) by (grpc_method)",
+          "expr": "sum(rate(grpc_server_handled_total{job=\"beacon\",grpc_code=\"OK\"}[5m])) by (grpc_method) / sum(rate(grpc_server_handled_total{job=\"beacon\"}[5m])) by (grpc_method)",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{grpc_method}}",
@@ -1167,7 +1163,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "go_goroutines{component=\"beacon-chain\"}",
+          "expr": "go_goroutines{job=\"beacon\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{pod_name}}",

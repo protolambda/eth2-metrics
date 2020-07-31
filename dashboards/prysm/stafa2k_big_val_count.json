@@ -1230,7 +1230,7 @@
       "pluginVersion": "7.0.1",
       "targets": [
         {
-          "expr": "(time()-process_start_time_seconds{job=\"$validator_job\"})/3600",
+          "expr": "(time()-process_start_time_seconds{job=\"validator\"})/3600",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -2182,13 +2182,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg_over_time(go_memstats_alloc_bytes{job=\"$node_job\"}[1m:5s])",
+          "expr": "avg_over_time(go_memstats_alloc_bytes{job=\"beacon\"}[1m:5s])",
           "interval": "",
           "legendFormat": "memory {{job}}",
           "refId": "A"
         },
         {
-          "expr": "avg_over_time(go_memstats_alloc_bytes{job=\"$validator_job\"}[1m:5s])",
+          "expr": "avg_over_time(go_memstats_alloc_bytes{job=\"validator\"}[1m:5s])",
           "interval": "",
           "legendFormat": "memory {{job}}",
           "refId": "C"
@@ -2435,7 +2435,7 @@
       "pluginVersion": "7.0.1",
       "targets": [
         {
-          "expr": "(time()-process_start_time_seconds{job=\"$node_job\"})/3600",
+          "expr": "(time()-process_start_time_seconds{job=\"beacon\"})/3600",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -2667,14 +2667,14 @@
       "pluginVersion": "7.0.1",
       "targets": [
         {
-          "expr": "sum(delta(log_entries_total{job=\"$node_job\", level=\"error\"}[1h]) > 0)",
+          "expr": "sum(delta(log_entries_total{job=\"beacon\", level=\"error\"}[1h]) > 0)",
           "instant": false,
           "interval": "",
           "legendFormat": "error",
           "refId": "A"
         },
         {
-          "expr": "sum(delta(log_entries_total{job=\"$node_job\", level=\"warning\"}[1h]) > 0)",
+          "expr": "sum(delta(log_entries_total{job=\"beacon\", level=\"warning\"}[1h]) > 0)",
           "instant": false,
           "interval": "",
           "legendFormat": "warning",

@@ -3868,35 +3868,35 @@
           "valueMaps": [
             {
               "text": "timer",
-              "value": "async_tasks_count{async_task_count=\"timer\",instance=\"localhost:5052\",job=\"nodes\"}"
+              "value": "async_tasks_count{async_task_count=\"timer\",instance=\"localhost:5052\",job=\"beacon\"}"
             },
             {
               "text": "sync",
-              "value": "async_tasks_count{async_task_count=\"sync\",instance=\"localhost:5052\",job=\"nodes\"}"
+              "value": "async_tasks_count{async_task_count=\"sync\",instance=\"localhost:5052\",job=\"beacon\"}"
             },
             {
               "text": "router",
-              "value": "async_tasks_count{async_task_count=\"router\",instance=\"localhost:5052\",job=\"nodes\"}"
+              "value": "async_tasks_count{async_task_count=\"router\",instance=\"localhost:5052\",job=\"beacon\"}"
             },
             {
               "text": "notifier",
-              "value": "async_tasks_count{async_task_count=\"notifier\",instance=\"localhost:5052\",job=\"nodes\"}"
+              "value": "async_tasks_count{async_task_count=\"notifier\",instance=\"localhost:5052\",job=\"beacon\"}"
             },
             {
               "text": "network",
-              "value": "async_tasks_count{async_task_count=\"network\",instance=\"localhost:5052\",job=\"nodes\"}"
+              "value": "async_tasks_count{async_task_count=\"network\",instance=\"localhost:5052\",job=\"beacon\"}"
             },
             {
               "text": "libp2p",
-              "value": "async_tasks_count{async_task_count=\"libp2p\",instance=\"localhost:5052\",job=\"nodes\"}"
+              "value": "async_tasks_count{async_task_count=\"libp2p\",instance=\"localhost:5052\",job=\"beacon\"}"
             },
             {
               "text": "http",
-              "value": "async_tasks_count{async_task_count=\"http\",instance=\"localhost:5052\",job=\"nodes\"}"
+              "value": "async_tasks_count{async_task_count=\"http\",instance=\"localhost:5052\",job=\"beacon\"}"
             },
             {
               "text": "eth1",
-              "value": "async_tasks_count{async_task_count=\"eth1\",instance=\"localhost:5052\",job=\"nodes\"}"
+              "value": "async_tasks_count{async_task_count=\"eth1\",instance=\"localhost:5052\",job=\"beacon\"}"
             }
           ]
         },

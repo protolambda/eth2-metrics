@@ -89,27 +89,27 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(process_cpu_seconds_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}[2m]) * 100",
+          "expr": "rate(process_cpu_seconds_total{job=\"beacon\"}[2m]) * 100",
           "legendFormat": "CPU usage %",
           "refId": "A"
         },
         {
-          "expr": "process_open_fds{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "process_open_fds{job=\"beacon\"}",
           "legendFormat": "open file descriptors",
           "refId": "C"
         },
         {
-          "expr": "process_resident_memory_bytes{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "process_resident_memory_bytes{job=\"beacon\"}",
           "legendFormat": "RSS",
           "refId": "D"
         },
         {
-          "expr": "nim_gc_mem_bytes{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "nim_gc_mem_bytes{job=\"beacon\"}",
           "legendFormat": "Nim GC mem total",
           "refId": "F"
         },
         {
-          "expr": "nim_gc_mem_occupied_bytes{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "nim_gc_mem_occupied_bytes{job=\"beacon\"}",
           "legendFormat": "Nim GC mem used",
           "refId": "G"
         }
@@ -118,7 +118,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "resources #${container}@${instance}",
+      "title": "resources ${instance}",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -205,13 +205,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by(type) (libp2p_open_streams{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"})",
+          "expr": "sum by(type) (libp2p_open_streams{job=\"beacon\"})",
           "interval": "",
           "legendFormat": "{{type}}",
           "refId": "A"
         },
         {
-          "expr": "sum (libp2p_open_streams{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"})",
+          "expr": "sum (libp2p_open_streams{job=\"beacon\"})",
           "interval": "",
           "legendFormat": "combined",
           "refId": "B"
@@ -221,7 +221,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "libp2p open streams #${container}@${instance}",
+      "title": "libp2p open streams ${instance}",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -307,13 +307,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by(initiator,node)(libp2p_mplex_channels{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"})",
+          "expr": "sum by(initiator,node)(libp2p_mplex_channels{job=\"beacon\"})",
           "interval": "",
           "legendFormat": "initiator {{initiator}}",
           "refId": "B"
         },
         {
-          "expr": "sum(libp2p_mplex_channels{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"})",
+          "expr": "sum(libp2p_mplex_channels{job=\"beacon\"})",
           "interval": "",
           "legendFormat": "total",
           "refId": "A"
@@ -323,7 +323,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "libp2p mplex channels #${container}@${instance}",
+      "title": "libp2p mplex channels ${instance}",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -414,7 +414,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "nim_gc_heap_instance_occupied_bytes{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "nim_gc_heap_instance_occupied_bytes{job=\"beacon\"}",
           "interval": "",
           "legendFormat": "{{type_name}}",
           "refId": "A"
@@ -424,7 +424,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "GC heap objects #${container}@${instance}",
+      "title": "GC heap objects ${instance}",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -510,7 +510,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sort_desc(sum by(peer, initiator)(libp2p_mplex_channels{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}))",
+          "expr": "sort_desc(sum by(peer, initiator)(libp2p_mplex_channels{job=\"beacon\"}))",
           "interval": "",
           "legendFormat": "peer {{peer}}",
           "refId": "B"
@@ -520,7 +520,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "libp2p mplex channels per peer #${container}@${instance}",
+      "title": "libp2p mplex channels per peer ${instance}",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -609,7 +609,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sqlite3_memory_used_bytes{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "sqlite3_memory_used_bytes{job=\"beacon\"}",
           "interval": "",
           "legendFormat": "Memory used",
           "refId": "A"
@@ -619,7 +619,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "SQLite3 #${container}@${instance}",
+      "title": "SQLite3 ${instance}",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -707,7 +707,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "ceil(rate(beacon_blocks_received_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}[2m]))",
+          "expr": "ceil(rate(beacon_blocks_received_total{job=\"beacon\"}[2m]))",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -715,7 +715,7 @@
           "refId": "B"
         },
         {
-          "expr": "ceil(rate(beacon_blocks_proposed_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}[2m]))",
+          "expr": "ceil(rate(beacon_blocks_proposed_total{job=\"beacon\"}[2m]))",
           "interval": "",
           "legendFormat": "proposed",
           "refId": "A"
@@ -725,7 +725,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "blocks #${container}@${instance}",
+      "title": "blocks ${instance}",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -811,13 +811,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by(type) (libp2p_peers{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"})",
+          "expr": "sum by(type) (libp2p_peers{job=\"beacon\"})",
           "interval": "",
           "legendFormat": "connected peers",
           "refId": "A"
         },
         {
-          "expr": "sum (libp2p_pubsub_peers{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"})",
+          "expr": "sum (libp2p_pubsub_peers{job=\"beacon\"})",
           "interval": "",
           "legendFormat": "pubsub peers",
           "refId": "B"
@@ -827,7 +827,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "libp2p peers #${container}@${instance}",
+      "title": "libp2p peers ${instance}",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -912,13 +912,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "round(increase(beacon_attestations_received_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}[2m]))",
+          "expr": "round(increase(beacon_attestations_received_total{job=\"beacon\"}[2m]))",
           "interval": "",
           "legendFormat": "received",
           "refId": "A"
         },
         {
-          "expr": "round(increase(beacon_attestations_sent_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}[2m]))",
+          "expr": "round(increase(beacon_attestations_sent_total{job=\"beacon\"}[2m]))",
           "interval": "",
           "legendFormat": "sent",
           "refId": "B"
@@ -928,7 +928,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "attestations #${container}@${instance}",
+      "title": "attestations ${instance}",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1014,13 +1014,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "beacon_current_validators{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "beacon_current_validators{job=\"beacon\"}",
           "interval": "",
           "legendFormat": "current validators",
           "refId": "A"
         },
         {
-          "expr": "beacon_current_live_validators{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "beacon_current_live_validators{job=\"beacon\"}",
           "interval": "",
           "legendFormat": "current live validators",
           "refId": "B"
@@ -1030,7 +1030,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "validators #${container}@${instance}",
+      "title": "validators ${instance}",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1106,7 +1106,7 @@
       "reverseYBuckets": false,
       "targets": [
         {
-          "expr": "round(increase(beacon_attestation_received_seconds_from_slot_start_bucket{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}[2m]))",
+          "expr": "round(increase(beacon_attestation_received_seconds_from_slot_start_bucket{job=\"beacon\"}[2m]))",
           "format": "heatmap",
           "instant": false,
           "interval": "",
@@ -1117,7 +1117,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "received attestation delay (s) #${container}@${instance}",
+      "title": "received attestation delay (s) ${instance}",
       "tooltip": {
         "show": true,
         "showHistogram": false
@@ -1188,7 +1188,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "beacon_state_data_cache_hits_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"} * 100 / (beacon_state_data_cache_hits_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"} + beacon_state_data_cache_misses_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"})",
+          "expr": "beacon_state_data_cache_hits_total{job=\"beacon\"} * 100 / (beacon_state_data_cache_hits_total{job=\"beacon\"} + beacon_state_data_cache_misses_total{job=\"beacon\"})",
           "interval": "",
           "legendFormat": "cache hit rate",
           "refId": "A"
@@ -1198,7 +1198,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "pool.cachedStates #${container}@${instance}",
+      "title": "pool.cachedStates ${instance}",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1275,7 +1275,7 @@
       "reverseYBuckets": false,
       "targets": [
         {
-          "expr": "round(sum by (topic) (increase(libp2p_pubsub_received_messages_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}[2m])))",
+          "expr": "round(sum by (topic) (increase(libp2p_pubsub_received_messages_total{job=\"beacon\"}[2m])))",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -1286,7 +1286,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "libp2p received gossip #${container}@${instance}",
+      "title": "libp2p received gossip ${instance}",
       "tooltip": {
         "show": true,
         "showHistogram": false
@@ -1377,17 +1377,17 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "process_resident_memory_bytes{container=\"beacon-node-testnet1-1\", datacenter=\"aws-eu-central-1a\", fleet=\"nimbus.test\", group=\",nimbus.test,beacon,nimbus,metrics,\", instance=\"node-08.aws-eu-central-1a.nimbus.test\", job=\"beacon-node-metrics\", source=\"slave-01.aws-eu-central-1a.metrics.hq\"}",
+      "tableColumn": "process_resident_memory_bytes{job=\"beacon\"}",
       "targets": [
         {
-          "expr": "process_resident_memory_bytes{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "process_resident_memory_bytes{job=\"beacon\"}",
           "refId": "A"
         }
       ],
       "thresholds": "",
       "timeFrom": null,
       "timeShift": null,
-      "title": "RSS mem #${container}@${instance}",
+      "title": "RSS mem ${instance}",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -1466,17 +1466,17 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "{container=\"beacon-node-testnet1-1\", datacenter=\"aws-eu-central-1a\", fleet=\"nimbus.test\", group=\",nimbus.test,beacon,nimbus,metrics,\", instance=\"node-08.aws-eu-central-1a.nimbus.test\", job=\"beacon-node-metrics\", source=\"slave-01.aws-eu-central-1a.metrics.hq\"}",
+      "tableColumn": "{job=\"beacon\"}",
       "targets": [
         {
-          "expr": "rate(process_cpu_seconds_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}[2m]) * 100",
+          "expr": "rate(process_cpu_seconds_total{job=\"beacon\"}[2m]) * 100",
           "refId": "A"
         }
       ],
       "thresholds": "",
       "timeFrom": null,
       "timeShift": null,
-      "title": "CPU usage #${container}@${instance}",
+      "title": "CPU usage ${instance}",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -1555,10 +1555,10 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "beacon_slot{container=\"beacon-node-testnet1-1\", datacenter=\"aws-eu-central-1a\", fleet=\"nimbus.test\", group=\",nimbus.test,beacon,nimbus,metrics,\", instance=\"node-08.aws-eu-central-1a.nimbus.test\", job=\"beacon-node-metrics\", source=\"slave-01.aws-eu-central-1a.metrics.hq\"}",
+      "tableColumn": "beacon_slot{job=\"beacon\"}",
       "targets": [
         {
-          "expr": "beacon_slot{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "beacon_slot{job=\"beacon\"}",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -1567,7 +1567,7 @@
       "thresholds": "",
       "timeFrom": null,
       "timeShift": null,
-      "title": "current slot #${container}@${instance}",
+      "title": "current slot ${instance}",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -1649,7 +1649,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(beacon_attestations_sent_total{job=\"beacon-node-metrics\",container=~\"beacon-node-testnet1-.\"})",
+          "expr": "sum(beacon_attestations_sent_total{job=\"beacon\"})",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -1737,17 +1737,17 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "beacon_attestations_received_total{container=\"beacon-node-testnet1-1\", datacenter=\"aws-eu-central-1a\", fleet=\"nimbus.test\", group=\",nimbus.test,beacon,nimbus,metrics,\", instance=\"node-08.aws-eu-central-1a.nimbus.test\", job=\"beacon-node-metrics\", source=\"slave-01.aws-eu-central-1a.metrics.hq\"}",
+      "tableColumn": "beacon_attestations_received_total{job=\"beacon\"}",
       "targets": [
         {
-          "expr": "beacon_attestations_received_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "beacon_attestations_received_total{job=\"beacon\"}",
           "refId": "A"
         }
       ],
       "thresholds": "",
       "timeFrom": null,
       "timeShift": null,
-      "title": "att'ns recv'd #${container}@${instance}",
+      "title": "att'ns recv'd ${instance}",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -1825,10 +1825,10 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "beacon_current_epoch{container=\"beacon-node-testnet1-1\", datacenter=\"aws-eu-central-1a\", fleet=\"nimbus.test\", group=\",nimbus.test,beacon,nimbus,metrics,\", instance=\"node-08.aws-eu-central-1a.nimbus.test\", job=\"beacon-node-metrics\", source=\"slave-01.aws-eu-central-1a.metrics.hq\"}",
+      "tableColumn": "beacon_current_epoch{job=\"beacon\"}",
       "targets": [
         {
-          "expr": "beacon_current_epoch{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "beacon_current_epoch{job=\"beacon\"}",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -1837,7 +1837,7 @@
       "thresholds": "",
       "timeFrom": null,
       "timeShift": null,
-      "title": "current epoch #${container}@${instance}",
+      "title": "current epoch ${instance}",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -1915,10 +1915,10 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "beacon_current_justified_epoch{container=\"beacon-node-testnet1-1\", datacenter=\"aws-eu-central-1a\", fleet=\"nimbus.test\", group=\",nimbus.test,beacon,nimbus,metrics,\", instance=\"node-08.aws-eu-central-1a.nimbus.test\", job=\"beacon-node-metrics\", source=\"slave-01.aws-eu-central-1a.metrics.hq\"}",
+      "tableColumn": "beacon_current_justified_epoch{job=\"beacon\"}",
       "targets": [
         {
-          "expr": "beacon_current_justified_epoch{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "beacon_current_justified_epoch{job=\"beacon\"}",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -1927,7 +1927,7 @@
       "thresholds": "",
       "timeFrom": null,
       "timeShift": null,
-      "title": "current justified epoch #${container}@${instance}",
+      "title": "current justified epoch ${instance}",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -2006,10 +2006,10 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "{container=\"beacon-node-testnet1-1\", datacenter=\"aws-eu-central-1a\", fleet=\"nimbus.test\", group=\",nimbus.test,beacon,nimbus,metrics,\", instance=\"node-08.aws-eu-central-1a.nimbus.test\", job=\"beacon-node-metrics\", source=\"slave-01.aws-eu-central-1a.metrics.hq\"}",
+      "tableColumn": "{job=\"beacon\"}",
       "targets": [
         {
-          "expr": "time() - process_start_time_seconds{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "time() - process_start_time_seconds{job=\"beacon\"}",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -2018,7 +2018,7 @@
       "thresholds": "",
       "timeFrom": null,
       "timeShift": null,
-      "title": "runtime #${container}@${instance}",
+      "title": "runtime ${instance}",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -2097,17 +2097,17 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "libp2p_peers{container=\"beacon-node-testnet1-1\", datacenter=\"aws-eu-central-1a\", fleet=\"nimbus.test\", group=\",nimbus.test,beacon,nimbus,metrics,\", instance=\"node-08.aws-eu-central-1a.nimbus.test\", job=\"beacon-node-metrics\", source=\"slave-01.aws-eu-central-1a.metrics.hq\"}",
+      "tableColumn": "libp2p_peers{job=\"beacon\"}",
       "targets": [
         {
-          "expr": "libp2p_peers{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "libp2p_peers{job=\"beacon\"}",
           "refId": "A"
         }
       ],
       "thresholds": "",
       "timeFrom": null,
       "timeShift": null,
-      "title": "peers #${container}@${instance}",
+      "title": "peers ${instance}",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -2185,10 +2185,10 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "beacon_finalized_epoch{container=\"beacon-node-testnet1-1\", datacenter=\"aws-eu-central-1a\", fleet=\"nimbus.test\", group=\",nimbus.test,beacon,nimbus,metrics,\", instance=\"node-08.aws-eu-central-1a.nimbus.test\", job=\"beacon-node-metrics\", source=\"slave-01.aws-eu-central-1a.metrics.hq\"}",
+      "tableColumn": "beacon_finalized_epoch{job=\"beacon\"}",
       "targets": [
         {
-          "expr": "beacon_finalized_epoch{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}",
+          "expr": "beacon_finalized_epoch{job=\"beacon\"}",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -2197,7 +2197,7 @@
       "thresholds": "",
       "timeFrom": null,
       "timeShift": null,
-      "title": "last finalized epoch #${container}@${instance}",
+      "title": "last finalized epoch ${instance}",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -2248,7 +2248,7 @@
       "reverseYBuckets": false,
       "targets": [
         {
-          "expr": "round(sum by (topic) (increase(libp2p_pubsub_sent_messages_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}[2m])))",
+          "expr": "round(sum by (topic) (increase(libp2p_pubsub_sent_messages_total{job=\"beacon\"}[2m])))",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -2259,7 +2259,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "libp2p sent gossip #${container}@${instance}",
+      "title": "libp2p sent gossip ${instance}",
       "tooltip": {
         "show": true,
         "showHistogram": false
@@ -2323,7 +2323,7 @@
       "reverseYBuckets": false,
       "targets": [
         {
-          "expr": "sum by (topic) (increase(libp2p_pubsub_messages_published_total{job=\"beacon-node-metrics\",container=\"${container}\",instance=\"${instance}\"}[2m]))",
+          "expr": "sum by (topic) (increase(libp2p_pubsub_messages_published_total{job=\"beacon\"}[2m]))",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -2334,7 +2334,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "libp2p published messages per topic #${container}@${instance}",
+      "title": "libp2p published messages per topic ${instance}",
       "tooltip": {
         "show": true,
         "showHistogram": false
@@ -2378,50 +2378,6 @@
         "refresh": 1,
         "regex": "",
         "type": "datasource"
-      },
-      {
-        "allValue": null,
-        "current": {},
-        "datasource": "${DS_PROMETHEUS}",
-        "definition": "label_values(process_virtual_memory_bytes{job=\"beacon-node-metrics\"},container)",
-        "hide": 0,
-        "includeAll": false,
-        "label": null,
-        "multi": false,
-        "name": "container",
-        "options": [],
-        "query": "label_values(process_virtual_memory_bytes{job=\"beacon-node-metrics\"},container)",
-        "refresh": 1,
-        "regex": "/.*testnet1.*/",
-        "skipUrlSync": false,
-        "sort": 1,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {},
-        "datasource": "${DS_PROMETHEUS}",
-        "definition": "label_values(process_virtual_memory_bytes{job=\"beacon-node-metrics\"},instance)",
-        "hide": 0,
-        "includeAll": false,
-        "label": null,
-        "multi": false,
-        "name": "instance",
-        "options": [],
-        "query": "label_values(process_virtual_memory_bytes{job=\"beacon-node-metrics\"},instance)",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 1,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
       }
     ]
   },
