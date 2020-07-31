@@ -2381,11 +2381,7 @@
       },
       {
         "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "beacon-node-1",
-          "value": "beacon-node-1"
-        },
+        "current": {},
         "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values(process_virtual_memory_bytes{job=\"beacon-node-metrics\"},container)",
         "hide": 0,
@@ -2407,11 +2403,7 @@
       },
       {
         "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "node-01.test",
-          "value": "node-01.test"
-        },
+        "current": {},
         "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values(process_virtual_memory_bytes{job=\"beacon-node-metrics\"},instance)",
         "hide": 0,
@@ -2451,7 +2443,7 @@
     ]
   },
   "timezone": "",
-  "title": "Nimbus an Libp2p testnet1",
+  "title": "Nimbus LibP2P",
   "uid": "pgeNfj2Wz2a",
   "version": 7
 }
