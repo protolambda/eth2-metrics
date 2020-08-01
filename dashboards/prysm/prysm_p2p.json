@@ -56,6 +56,7 @@
   "links": [],
   "panels": [
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -141,6 +142,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -226,6 +228,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -314,6 +317,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "cards": {
         "cardPadding": null,
         "cardRound": null
@@ -379,6 +383,7 @@
       "yBucketSize": null
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -464,6 +469,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -563,6 +569,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -648,6 +655,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -766,14 +774,14 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_PROMETHEUS}",
-        "definition": "go_info{component=\"beacon-chain\"}",
+        "definition": "go_info{job=\"beacon\"}",
         "hide": 0,
         "includeAll": true,
         "label": null,
         "multi": true,
         "name": "version",
         "options": [],
-        "query": "go_info{component=\"beacon-chain\"}",
+        "query": "go_info{job=\"beacon\"}",
         "refresh": 1,
         "regex": "/.*version=\"([^\"]*).*/",
         "skipUrlSync": false,
