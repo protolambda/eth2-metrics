@@ -500,21 +500,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "max(sum(p2p_peer_count{version=~\"${version:pipe}\", state=~\"Connected|Connecting\"}) by (pod_name))",
+          "expr": "max(sum(p2p_peer_count{version=~\"${version:pipe}\", state=~\"Connected|Connecting\"}) by (instance))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Max",
           "refId": "A"
         },
         {
-          "expr": "min(sum(p2p_peer_count{version=~\"${version:pipe}\", state=~\"Connected|Connecting\"}) by (pod_name))",
+          "expr": "min(sum(p2p_peer_count{version=~\"${version:pipe}\", state=~\"Connected|Connecting\"}) by (instance))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Min",
           "refId": "B"
         },
         {
-          "expr": "avg(sum(p2p_peer_count{version=~\"${version:pipe}\", state=~\"Connected|Connecting\"}) by (pod_name))",
+          "expr": "avg(sum(p2p_peer_count{version=~\"${version:pipe}\", state=~\"Connected|Connecting\"}) by (instance))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Average",

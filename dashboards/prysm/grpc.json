@@ -50,6 +50,7 @@
   "links": [],
   "panels": [
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -139,6 +140,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -224,6 +226,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "collapsed": false,
       "gridPos": {
         "h": 1,
@@ -238,6 +241,7 @@
       "type": "row"
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,

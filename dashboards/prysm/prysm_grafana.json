@@ -9,38 +9,6 @@
       "pluginName": "Prometheus"
     }
   ],
-  "__requires": [
-    {
-      "type": "panel",
-      "id": "gauge",
-      "name": "Gauge",
-      "version": ""
-    },
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "6.2.5"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph",
-      "version": ""
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "singlestat",
-      "name": "Singlestat",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -473,6 +441,7 @@
       "valueName": "avg"
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
@@ -554,6 +523,7 @@
       "valueName": "avg"
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
@@ -636,6 +606,7 @@
       "valueName": "avg"
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 4,
         "w": 3,
@@ -849,7 +820,7 @@
           "expr": "beacon_slot > 0",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "latest slot {{pod_name}}",
+          "legendFormat": "latest slot {{instance}}",
           "refId": "A"
         },
         {
@@ -857,14 +828,14 @@
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
-          "legendFormat": "last justified {{pod_name}}",
+          "legendFormat": "last justified {{instance}}",
           "refId": "B"
         },
         {
           "expr": "beacon_finalized_epoch * 32 > 0",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "last finalized {{pod_name}}",
+          "legendFormat": "last finalized {{instance}}",
           "refId": "C"
         }
       ],
@@ -910,6 +881,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -995,6 +967,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1127,6 +1100,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1166,7 +1140,7 @@
           "expr": "go_goroutines{job=\"beacon\"}",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "{{pod_name}}",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -1212,6 +1186,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1392,6 +1367,7 @@
       "valueName": "avg"
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
@@ -1577,6 +1553,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1704,7 +1681,7 @@
           "expr": "sum(p2p_peer_count{state=~\"Connected|Connecting\"}) by (pod_name)",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "{{pod_name}}",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -1790,14 +1767,14 @@
           "expr": "powchain_valid_deposits_received",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "total deposits {{pod_name}}",
+          "legendFormat": "total deposits {{instance}}",
           "refId": "A"
         },
         {
           "expr": "beacondb_pending_deposits",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "pending deposits {{pod_name}}",
+          "legendFormat": "pending deposits {{instance}}",
           "refId": "B"
         }
       ],
@@ -1843,6 +1820,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,

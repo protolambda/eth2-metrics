@@ -55,6 +55,7 @@
   "links": [],
   "panels": [
     {
+      "datasource": "${DS_PROMETHEUS}",
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
@@ -137,6 +138,7 @@
       "valueName": "avg"
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
@@ -219,6 +221,7 @@
       "valueName": "avg"
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
@@ -301,6 +304,7 @@
       "valueName": "avg"
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
@@ -495,6 +499,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -580,6 +585,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -682,6 +688,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -772,6 +779,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -862,6 +870,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -946,6 +955,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1036,6 +1046,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1126,6 +1137,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1217,6 +1229,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1307,6 +1320,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1398,6 +1412,7 @@
       }
     },
     {
+      "datasource": "${DS_PROMETHEUS}",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
