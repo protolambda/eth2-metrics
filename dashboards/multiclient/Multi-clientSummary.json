@@ -176,8 +176,8 @@
     ]
   },
   "time": {
-    "from": "2020-07-18T21:11:00.551Z",
-    "to": "2020-07-18T21:35:27.778Z"
+    "from": "now-30m",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
